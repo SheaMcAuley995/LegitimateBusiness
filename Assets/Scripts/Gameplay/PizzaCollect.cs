@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class PizzaCollect : MonoBehaviour {
 
-    public static PizzaCollect Instance;
+    public static PizzaCollect Instance { get; private set; }
 
     public delegate void OnCollectChange();
-    private PizzaCollect onCollectChange;
+    public OnCollectChange onCollectChange;
+
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Drunk")
         {
-            Destroy(this.gameObject);
+            if(onCollectChange != null)
+            {
+                onCollectChange();
+            }
+            //Destroy(this.gameObject);
         }
     }
 }

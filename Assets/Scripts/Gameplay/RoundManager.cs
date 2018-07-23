@@ -26,6 +26,7 @@ public class RoundManager : MonoBehaviour {
     private void Start()
     {
         StartRound();
+        PizzaCollect.Instance.onCollectChange += PizzaReachedCallback;
     }
 
     private void Update()
@@ -61,6 +62,11 @@ public class RoundManager : MonoBehaviour {
             onRoundWin();
             StartRound();
         }
+    }
+
+    private void PizzaReachedCallback()
+    {
+        onPizzaReached();
     }
 
     public void AddOnTimerStart(OnStageChange func)
