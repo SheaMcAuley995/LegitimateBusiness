@@ -21,7 +21,7 @@ public class DrunkAi : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         path = new NavMeshPath();
-        //StartCoroutine(detectObjects());
+        StartCoroutine(detectObjects());
         StartCoroutine(drunkSway());
     }
 
