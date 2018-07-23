@@ -7,7 +7,7 @@ public class PizzaCollect : MonoBehaviour {
     public static PizzaCollect Instance;
 
     public delegate void OnCollectChange();
-    public PizzaCollect onCollectChange;
+    private PizzaCollect onCollectChange;
 
     private void OnCollisionEnter(Collision collision)
     {

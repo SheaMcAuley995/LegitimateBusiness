@@ -9,7 +9,7 @@ public class DrunkAi : MonoBehaviour {
     private NavMeshPath path;
 
     private Vector3 desiredDir;
-    
+    private Vector3 swayDir;
 
     public GameObject target;
     [Range(0,10)]
@@ -22,7 +22,7 @@ public class DrunkAi : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         path = new NavMeshPath();
         StartCoroutine(detectObjects());
-        StartCoroutine(drunkSway());
+        //StartCoroutine(drunkSwayTime());
     }
 
     private void Update()
@@ -34,18 +34,28 @@ public class DrunkAi : MonoBehaviour {
 
         Debug.DrawLine(transform.position, desiredDir, Color.green);
 
-        rb.AddForce(desiredDir * 2);
+        rb.AddForce(desiredDir * 5);
     }
 
-    IEnumerator drunkSway()
+    IEnumerator drunkSwayTime()
     {
         while (true)
         {
-            Vector3 swayDir = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
-            rb.AddForce(swayDir * 10);
-            Debug.DrawLine(transform.position, swayDir,Color.yellow);
+            swayDir = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
+            //StartCoroutine(drunkSwayPower());
             yield return new WaitForSeconds(5 - drunkeness);
         }
+    }
+
+    IEnumerator drunkSwayPower()
+    {
+        while (true)
+        {
+            rb.AddForce(swayDir, ForceMode.Force);
+            Debug.DrawLine(transform.position, (transform.position - swayDir), Color.yellow);
+            yield return null;
+        }
+
     }
 
     IEnumerator detectObjects()
