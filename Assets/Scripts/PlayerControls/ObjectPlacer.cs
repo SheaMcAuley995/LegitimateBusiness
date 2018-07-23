@@ -22,6 +22,7 @@ public class ObjectPlacer : MonoBehaviour {
     {
         roundManager.AddOnTimerStart(StartPlacing);
         roundManager.AddOnTimerFinish(StopPlacing);
+        roundManager.AddOnRoundWin(StartPlacing);
     }
 
     private void Start()
