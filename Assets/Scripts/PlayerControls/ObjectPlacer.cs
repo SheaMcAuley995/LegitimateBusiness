@@ -7,13 +7,22 @@ public class ObjectPlacer : MonoBehaviour {
     public float gridSquareSize;
     public GameObject[] prefabs;
     public float[] prefabCosts;
-    public Camera cam;
     public LayerMask floorMask;
+
+    [Header("Links")]
+    public Camera cam;
+    public RoundManager roundManager;
 
     private int selection = 0;
     private GameObject ghost;
 
 
+
+    private void Awake()
+    {
+        roundManager.AddOnTimerStart(StartPlacing);
+        roundManager.AddOnTimerFinish(StopPlacing);
+    }
 
     private void Start()
     {
@@ -42,6 +51,10 @@ public class ObjectPlacer : MonoBehaviour {
 
     private void Update()
     {
+        if(ghost == null)
+        {
+            return;
+        }
 
         //Position ghost
         RaycastHit hit;
@@ -113,12 +126,15 @@ public class ObjectPlacer : MonoBehaviour {
 
     public void StartPlacing()
     {
-        MakeGhost();
+        ReplaceGhost();
     }
 
     private void ReplaceGhost()
     {
-        Destroy(ghost);
+        if(ghost != null)
+        {
+            Destroy(ghost);
+        }
         MakeGhost();
     }
 
