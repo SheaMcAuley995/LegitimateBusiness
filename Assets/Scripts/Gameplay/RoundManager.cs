@@ -8,12 +8,20 @@ public class RoundManager : MonoBehaviour {
     private OnStageChange onTimerStart;
     private OnStageChange onTimerFinish;
     private OnStageChange onPizzaReached;
+    private OnStageChange onGameEnd;
+    private OnStageChange onRoundWin;
 
     public float placementTime;
+    public float costOfPizza;
 
     public float placementTimer { get; private set; }
 
 
+
+    private void Awake()
+    {
+        AddOnPizzaReached(FinishRound);
+    }
 
     private void Start()
     {
@@ -38,6 +46,20 @@ public class RoundManager : MonoBehaviour {
         if(onTimerStart != null)
         {
             onTimerStart();
+        }
+    }
+
+    private void FinishRound()
+    {
+        MoneyManager.Instance.SubtractMoney(costOfPizza);
+        if(MoneyManager.Instance.Money <= 0 && onGameEnd != null)
+        {
+            onGameEnd();
+        }
+        else if(MoneyManager.Instance.Money > 0 && onRoundWin != null)
+        {
+            onRoundWin();
+            StartRound();
         }
     }
 
@@ -74,6 +96,30 @@ public class RoundManager : MonoBehaviour {
         else
         {
             onPizzaReached += func;
+        }
+    }
+
+    public void AddOnGameEnd(OnStageChange func)
+    {
+        if (onGameEnd == null)
+        {
+            onGameEnd = func;
+        }
+        else
+        {
+            onGameEnd += func;
+        }
+    }
+
+    public void AddOnRoundWin(OnStageChange func)
+    {
+        if (onRoundWin == null)
+        {
+            onRoundWin = func;
+        }
+        else
+        {
+            onRoundWin += func;
         }
     }
 
