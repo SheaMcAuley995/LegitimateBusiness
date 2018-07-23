@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 public class DrunkAi : MonoBehaviour {
 
-    
     private Rigidbody rb;
     private NavMeshPath path;
 
@@ -19,6 +18,7 @@ public class DrunkAi : MonoBehaviour {
     public float waitTime;
     private void Start()
     {
+
         rb = GetComponent<Rigidbody>();
         path = new NavMeshPath();
         StartCoroutine(detectObjects());
