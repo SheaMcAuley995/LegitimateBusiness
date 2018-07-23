@@ -6,6 +6,7 @@ public class ObjectPlacer : MonoBehaviour {
 
     public float gridSquareSize;
     public GameObject[] prefabs;
+    public float[] prefabCosts;
     public Camera cam;
     public LayerMask floorMask;
 
@@ -17,6 +18,26 @@ public class ObjectPlacer : MonoBehaviour {
     private void Start()
     {
         StartPlacing();
+    }
+
+    private void OnValidate()
+    {
+        if(prefabs != null)
+        {
+            if (prefabCosts == null)
+            {
+                prefabCosts = new float[prefabs.Length];
+            }
+            if (prefabCosts.Length != prefabs.Length)
+            {
+                float[] newCosts = new float[prefabs.Length];
+                for (int i = 0; i < prefabCosts.Length && i < newCosts.Length; ++i)
+                {
+                    newCosts[i] = prefabCosts[i];
+                }
+                prefabCosts = newCosts;
+            }
+        }
     }
 
     private void Update()
@@ -71,10 +92,12 @@ public class ObjectPlacer : MonoBehaviour {
             }
 
             //Create object
-            if (Input.GetMouseButtonDown(0) && ghost.activeInHierarchy)
+            if (Input.GetMouseButtonDown(0) && ghost.activeInHierarchy
+                && MoneyManager.Instance.Money >= prefabCosts[selection])
             {
                 GameObject newobj = Instantiate(prefabs[selection]);
                 newobj.transform.position = ghost.transform.position;
+                MoneyManager.Instance.SubtractMoney(prefabCosts[selection]);
             }
         }
     }
