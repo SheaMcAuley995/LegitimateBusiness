@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ca8efb36c5053eb499231ef5fe6349d2
 folderAsset: yes
 timeCreated: 1532470056
+=======
+guid: fcd5f80482c5f624fb98a3e8338821c6
+folderAsset: yes
+timeCreated: 1532470999
+>>>>>>> shea
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

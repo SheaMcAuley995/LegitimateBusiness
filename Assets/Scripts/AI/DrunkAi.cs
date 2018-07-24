@@ -80,8 +80,16 @@ public class DrunkAi : MonoBehaviour {
             NavMesh.SamplePosition(transform.position, out navMeshHitA, float.PositiveInfinity, NavMesh.AllAreas);
             NavMesh.SamplePosition(target.transform.position, out navMeshHitB, float.PositiveInfinity, NavMesh.AllAreas);
             bool result = NavMesh.CalculatePath(navMeshHitA.position, navMeshHitB.position, NavMesh.AllAreas, path);
-
-            desiredDir = (path.corners[1] - transform.position).normalized;
+             
+            if(navMeshHitB.position != null)
+            {
+                desiredDir = (path.corners[1] - transform.position).normalized;
+            }
+            else
+            {
+                desiredDir = (target.transform.position - transform.position).normalized;
+            }
+            
             
            // print("Detection Activated");
 
