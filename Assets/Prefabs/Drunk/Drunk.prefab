@@ -545,6 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4333822057185668}
   - component: {fileID: 95690531241697364}
+  - component: {fileID: 114931440917378210}
   m_Layer: 0
   m_Name: Customer05@Walking
   m_TagString: Untagged
@@ -1985,7 +1986,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1617554518869256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0134697, y: 0.28, z: 1.0485927}
+  m_LocalPosition: {x: -4.9063396, y: 1.176, z: -0.84885037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4333822057185668}
@@ -2149,6 +2150,20 @@ MonoBehaviour:
   thoughtProcessSpeed: 0
   drunkeness: 0
   waitTime: 0
+--- !u!114 &114931440917378210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515056385633902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c509f508bbdca6c4d8d86abe1575743b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 1
+  DrunkBallRB: {fileID: 54724857825553414}
+  BallPos: {fileID: 4963668744563100}
 --- !u!135 &135800502422589760
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class DrunkMeshFollow : MonoBehaviour {
 
+    public float rotateSpeed;
+
     public Rigidbody DrunkBallRB;
     public Transform BallPos;
 
 	void Update () {
         transform.position = BallPos.position;
-       // transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
-        transform.rotation = Quaternion.LookRotation(DrunkBallRB.velocity, Vector3.up);
-	}
+        Vector3 walkDir = new Vector3(DrunkBallRB.velocity.x, 0, DrunkBallRB.velocity.z);
+        Quaternion toRotation = Quaternion.FromToRotation(transform.forward, walkDir.normalized);
+        transform.rotation = Quaternion.Slerp(transform.rotation,
+                                              toRotation,
+                                              rotateSpeed * Time.deltaTime);
+    }
 
 }
