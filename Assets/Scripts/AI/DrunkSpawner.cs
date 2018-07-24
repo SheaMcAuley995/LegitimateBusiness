@@ -58,6 +58,8 @@ public class DrunkSpawner : MonoBehaviour {
             drunk.GetComponent<DrunkAi>().target = pizza;
             drunks.Add(drunk);
             drunkMeshs.Add(drunkmesh);
+            drunkmesh.GetComponent<DrunkMeshFollow>().DrunkBallRB = drunk.GetComponent<Rigidbody>();
+            drunkmesh.GetComponent<DrunkMeshFollow>().BallPos = drunk.GetComponent<Transform>();
             yield return new WaitForSeconds(countDown);
 
         }
