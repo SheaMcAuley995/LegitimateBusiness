@@ -490,12 +490,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drunkGuy: {fileID: 1617554518869256, guid: 3572f6239451c1f43944e2583e020d6b, type: 2}
+  drunkMesh: {fileID: 1947405445212134, guid: 2013f0fb10cc3ab4388a7347039ef323, type: 2}
   spawnPoint: {fileID: 210442027}
   pizza: {fileID: 388497222}
   roundManager: {fileID: 2104426030}
   waveSize: 1
   countDown: 1
   drunks: []
+  drunkMeshs: []
 --- !u!4 &422553961
 Transform:
   m_ObjectHideFlags: 0

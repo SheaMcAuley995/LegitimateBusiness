@@ -12,9 +12,9 @@ public class DrunkMeshFollow : MonoBehaviour {
 	void Update () {
         transform.position = BallPos.position;
         Vector3 walkDir = new Vector3(DrunkBallRB.velocity.x, 0, DrunkBallRB.velocity.z);
-        Quaternion toRotation = Quaternion.FromToRotation(transform.forward, walkDir.normalized);
-        transform.rotation = Quaternion.Slerp(transform.rotation,
-                                              toRotation,
+        Quaternion lookAtRotation = Quaternion.LookRotation(walkDir.normalized, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation,
+                                              lookAtRotation,
                                               rotateSpeed * Time.deltaTime);
     }
 
