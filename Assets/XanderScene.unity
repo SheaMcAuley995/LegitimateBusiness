@@ -405,7 +405,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 210442026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.07, y: 3.84, z: 3.48}
+  m_LocalPosition: {x: -5.07, y: 1.98, z: 3.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422553961}
@@ -1454,15 +1454,13 @@ MonoBehaviour:
   gridSquareSize: 1
   prefabs:
   - {fileID: 0}
-  - {fileID: 1542983268297862, guid: df3374fc05cb99648a224627fc4a575d, type: 2}
   fragilePrefabs:
   - {fileID: 1349913792545130, guid: c43c4d243df5b0649985c981f9957fe8, type: 2}
   - {fileID: 1385730610714072, guid: 7c410ea4ec35c204aa6845727701b571, type: 2}
   - {fileID: 1415470188621692, guid: abb751922df855c47a736cc614f4e4a0, type: 2}
-  - {fileID: 1029956867499756, guid: 210c6dfce1d771d4093bef6332791625, type: 2}
+  - {fileID: 1457117254420634, guid: b03862749cd974a4bb0c148f6697850c, type: 2}
   prefabCosts:
-  - 50
-  - 100
+  - 30
   floorMask:
     serializedVersion: 2
     m_Bits: 256

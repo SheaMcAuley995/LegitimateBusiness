@@ -132,6 +132,7 @@ public class ObjectPlacer : MonoBehaviour {
                 }
                 BreakableManager.Instance.AddPlacedObject(newobj);
                 newobj.transform.position = ghost.transform.position;
+                newobj.transform.rotation = ghost.transform.rotation;
                 MoneyManager.Instance.SubtractMoney(prefabCosts[selection]);
                 if(selection == 0)
                 {
@@ -176,6 +177,7 @@ public class ObjectPlacer : MonoBehaviour {
         {
             ghost = Instantiate(prefabs[selection]);
         }
+        ghost.transform.eulerAngles = Vector3.up * (90.0f * Random.Range(0, 5));
         objectCostText.text = "$" + prefabCosts[selection];
         ghost.SetActive(false);
     }
