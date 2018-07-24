@@ -915,7 +915,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSquareSize: 1
   prefabs:
+  - {fileID: 0}
   - {fileID: 1542983268297862, guid: df3374fc05cb99648a224627fc4a575d, type: 2}
+  fragilePrefabs:
+  - {fileID: 1328340027920442, guid: 44de1642d53847d42bedeccb00e2a2f3, type: 2}
   - {fileID: 1948025951511554, guid: 31ffb319a04ff0b428ec99f75cdd2837, type: 2}
   prefabCosts:
   - 50
@@ -1056,7 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86966ac665a662a46a28ef6b284a9e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementTime: 99999
+  placementTime: 10
   costOfPizza: 100
 --- !u!4 &2104426031
 Transform:

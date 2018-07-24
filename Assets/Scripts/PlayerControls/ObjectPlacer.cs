@@ -6,6 +6,7 @@ public class ObjectPlacer : MonoBehaviour {
 
     public float gridSquareSize;
     public GameObject[] prefabs;
+    public GameObject[] fragilePrefabs;
     public float[] prefabCosts;
     public LayerMask floorMask;
 
@@ -14,6 +15,7 @@ public class ObjectPlacer : MonoBehaviour {
     public RoundManager roundManager;
 
     private int selection = 0;
+    private int fragileSelection;
     private GameObject ghost;
 
 
@@ -109,9 +111,21 @@ public class ObjectPlacer : MonoBehaviour {
             if (Input.GetMouseButtonDown(0) && ghost.activeInHierarchy
                 && MoneyManager.Instance.Money >= prefabCosts[selection])
             {
-                GameObject newobj = Instantiate(prefabs[selection]);
+                GameObject newobj;
+                if (selection != 0)
+                {
+                    newobj = Instantiate(prefabs[selection]);
+                }
+                else
+                {
+                    newobj = Instantiate(fragilePrefabs[fragileSelection]);
+                }
                 newobj.transform.position = ghost.transform.position;
                 MoneyManager.Instance.SubtractMoney(prefabCosts[selection]);
+                if(selection == 0)
+                {
+                    ReplaceGhost();
+                }
             }
         }
     }
@@ -141,7 +155,15 @@ public class ObjectPlacer : MonoBehaviour {
 
     private void MakeGhost()
     {
-        ghost = Instantiate(prefabs[selection]);
+        if(selection == 0)
+        {
+            fragileSelection = Random.Range(0, fragilePrefabs.Length);
+            ghost = Instantiate(fragilePrefabs[fragileSelection]);
+        }
+        else
+        {
+            ghost = Instantiate(prefabs[selection]);
+        }
         ghost.SetActive(false);
     }
 
