@@ -120,6 +120,7 @@ public class ObjectPlacer : MonoBehaviour {
                 {
                     newobj = Instantiate(fragilePrefabs[fragileSelection]);
                 }
+                BreakableManager.Instance.AddPlacedObject(newobj);
                 newobj.transform.position = ghost.transform.position;
                 MoneyManager.Instance.SubtractMoney(prefabCosts[selection]);
                 if(selection == 0)
