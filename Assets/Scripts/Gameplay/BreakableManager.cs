@@ -25,12 +25,12 @@ public class BreakableManager : MonoBehaviour {
         {
             Destroy(g);
         }
-        foreach(GameObject g in placedObjects)
-        {
-            Destroy(g);
-        }
+        //foreach(GameObject g in placedObjects)
+        //{
+        //    Destroy(g);
+        //}
         brokenPieces.Clear();
-        placedObjects.Clear();
+        //placedObjects.Clear();
     }
 
     public void AddPlacedObject(GameObject obj)
@@ -45,7 +45,7 @@ public class BreakableManager : MonoBehaviour {
 
     public void AddBrokenPieces(GameObject obj)
     {
-        placedObjects.Add(obj);
+        brokenPieces.Add(obj);
     }
 
 }

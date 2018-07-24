@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23327187933312900}
   - component: {fileID: 114364643568604452}
   - component: {fileID: 54724857825553414}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Drunk
   m_TagString: Drunk
   m_Icon: {fileID: 0}
