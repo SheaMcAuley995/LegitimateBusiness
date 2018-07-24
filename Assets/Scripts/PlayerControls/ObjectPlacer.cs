@@ -9,6 +9,7 @@ public class ObjectPlacer : MonoBehaviour {
     public GameObject[] fragilePrefabs;
     public float[] prefabCosts;
     public LayerMask floorMask;
+    public LayerMask placedObjectMask;
 
     [Header("Links")]
     public Camera cam;
@@ -62,17 +63,18 @@ public class ObjectPlacer : MonoBehaviour {
         //Position ghost
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit, float.MaxValue, floorMask))
+        ghost.SetActive(false);
+        if (Physics.Raycast(ray, out hit, float.MaxValue, floorMask))
         {
-            ghost.SetActive(true);
             ghost.transform.position = hit.point;
             ghost.transform.position = new Vector3(Mathf.Round(hit.point.x / gridSquareSize),
                                                    hit.point.y,
                                                    Mathf.Round(hit.point.z / gridSquareSize));
-        }
-        else
-        {
-            ghost.SetActive(false);
+            BoxCollider bx = ghost.GetComponent<BoxCollider>();
+            if(!Physics.CheckBox(ghost.transform.position, bx.size / (2.0f + float.MinValue), ghost.transform.rotation, placedObjectMask))
+            {
+                ghost.SetActive(true);
+            }
         }
 
         if(ghost.activeInHierarchy)

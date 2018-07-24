@@ -1043,6 +1043,9 @@ MonoBehaviour:
   floorMask:
     serializedVersion: 2
     m_Bits: 256
+  placedObjectMask:
+    serializedVersion: 2
+    m_Bits: 512
   cam: {fileID: 87793535}
   roundManager: {fileID: 2104426030}
 --- !u!1 &1679884644
