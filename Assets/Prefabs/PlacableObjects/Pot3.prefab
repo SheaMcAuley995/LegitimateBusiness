@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 114472401408401054}
   - component: {fileID: 65305590505627970}
   - component: {fileID: 208316241959790186}
+  - component: {fileID: 54191877626877256}
   m_Layer: 9
   m_Name: Pot3
   m_TagString: Untagged
@@ -3155,6 +3156,21 @@ Rigidbody:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308652509111000}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54191877626877256
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415470188621692}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
