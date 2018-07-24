@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 82289aa8a70635343b6d1af1736d47a9
-timeCreated: 1532468231
+guid: 8f8d27ff125fd3d4392fd1f42a8e60a4
+timeCreated: 1532470489
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: ClockGlass
-    100002: //RootNode
-    400000: ClockGlass
-    400002: //RootNode
+    100000: //RootNode
+    400000: //RootNode
     2100000: Breakables
-    2100002: TransparentLambert
-    2300000: ClockGlass
-    2300002: //RootNode
-    3300000: ClockGlass
-    3300002: //RootNode
-    4300000: Clock
-    4300002: ClockGlass
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Piggy
     9500000: //RootNode
   externalObjects: {}
   materials:
