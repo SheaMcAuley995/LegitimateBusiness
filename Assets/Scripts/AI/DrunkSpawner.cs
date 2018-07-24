@@ -14,6 +14,8 @@ public class DrunkSpawner : MonoBehaviour {
     public float countDown = 2f;
 
     public List<GameObject> drunks;
+    public List<GameObject> drunkMeshs;
+   
 
     public void Start()
     {
@@ -40,8 +42,10 @@ public class DrunkSpawner : MonoBehaviour {
         for (int i = 0; i < waveSize; i++)
         {
             Destroy(drunks[i].gameObject);
+            Destroy(drunkMeshs[i].gameObject);
         }
         drunks.Clear();
+        drunkMeshs.Clear();
     }
 
 
@@ -49,9 +53,11 @@ public class DrunkSpawner : MonoBehaviour {
     {
         for(int i = 0; i<waveSize;i++)
         {
+            GameObject drunkmesh = Instantiate(drunkMesh, spawnPoint.position, spawnPoint.rotation);
             GameObject drunk = Instantiate(drunkGuy, spawnPoint.position, spawnPoint.rotation);
             drunk.GetComponent<DrunkAi>().target = pizza;
             drunks.Add(drunk);
+            drunkMeshs.Add(drunkmesh);
             yield return new WaitForSeconds(countDown);
 
         }
