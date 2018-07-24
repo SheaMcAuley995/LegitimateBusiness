@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4895146909830152}
   - component: {fileID: 33275683021625484}
   - component: {fileID: 23904939706589430}
-  - component: {fileID: 114794848385118588}
   - component: {fileID: 65899685287040260}
+  - component: {fileID: 114794848385118588}
   m_Layer: 9
   m_Name: Pot4
   m_TagString: Untagged
@@ -1294,8 +1294,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029956867499756}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8416977, y: 0.28881195, z: -4.12068}
-  m_LocalScale: {x: 0.49358264, y: 0.49358264, z: 0.49358264}
+  m_LocalPosition: {x: -0.6414597, y: 0.86786366, z: -2.5172017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4362366104190176}
   m_Father: {fileID: 0}
@@ -2698,7 +2698,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bd9344cb64b4dc644ba16b8d57506b9b, type: 2}
+  - {fileID: 2100000, guid: d652e325116f2d641934542c938e0ff6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2862,7 +2862,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029956867499756}
-  m_Mesh: {fileID: 4300000, guid: 831e897a6e3206a429664a5879b9f89b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7582ca1e06ec0f948b98a21ad29e0f6e, type: 3}
 --- !u!33 &33350101388826498
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -4127,8 +4127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8300365, y: 3.6533806, z: 1.8300362}
-  m_Center: {x: 0.000042706724, y: 0.79583573, z: -0.0000018477439}
+  m_Size: {x: 0.91934323, y: 1.8353249, z: 0.91934323}
+  m_Center: {x: 0.000021278858, y: 0.3997988, z: -0.000000923872}
 --- !u!65 &65911576336854626
 BoxCollider:
   m_ObjectHideFlags: 1
