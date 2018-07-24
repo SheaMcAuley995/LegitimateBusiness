@@ -5,6 +5,7 @@ using UnityEngine;
 public class DrunkSpawner : MonoBehaviour {
 
     public GameObject drunkGuy;
+    public GameObject drunkMesh;
     public Transform spawnPoint;
     public GameObject pizza;
     public RoundManager roundManager;
