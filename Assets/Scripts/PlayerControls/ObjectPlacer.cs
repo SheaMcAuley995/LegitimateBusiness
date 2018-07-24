@@ -71,11 +71,11 @@ public class ObjectPlacer : MonoBehaviour {
         objectCostCanvas.SetActive(false);
         if (Physics.Raycast(ray, out hit, float.MaxValue, floorMask))
         {
+            BoxCollider bx = ghost.GetComponent<BoxCollider>();
             ghost.transform.position = hit.point;
             ghost.transform.position = new Vector3(Mathf.Round(hit.point.x / gridSquareSize),
-                                                   hit.point.y,
+                                                   hit.point.y + bx.size.y / 2.0f,
                                                    Mathf.Round(hit.point.z / gridSquareSize));
-            BoxCollider bx = ghost.GetComponent<BoxCollider>();
             if(!Physics.CheckBox(ghost.transform.position, bx.size / (2.0f + float.MinValue), ghost.transform.rotation, placedObjectMask))
             {
                 ghost.SetActive(true);
