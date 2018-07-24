@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectPlacer : MonoBehaviour {
 
@@ -10,10 +11,13 @@ public class ObjectPlacer : MonoBehaviour {
     public float[] prefabCosts;
     public LayerMask floorMask;
     public LayerMask placedObjectMask;
+    public float costCanvasHeightBoost;
 
     [Header("Links")]
     public Camera cam;
     public RoundManager roundManager;
+    public GameObject objectCostCanvas;
+    public Text objectCostText;
 
     private int selection = 0;
     private int fragileSelection;
@@ -64,6 +68,7 @@ public class ObjectPlacer : MonoBehaviour {
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         ghost.SetActive(false);
+        objectCostCanvas.SetActive(false);
         if (Physics.Raycast(ray, out hit, float.MaxValue, floorMask))
         {
             ghost.transform.position = hit.point;
@@ -74,6 +79,9 @@ public class ObjectPlacer : MonoBehaviour {
             if(!Physics.CheckBox(ghost.transform.position, bx.size / (2.0f + float.MinValue), ghost.transform.rotation, placedObjectMask))
             {
                 ghost.SetActive(true);
+                objectCostCanvas.SetActive(true);
+                objectCostCanvas.transform.position = ghost.transform.position + Vector3.up * costCanvasHeightBoost;
+                objectCostCanvas.transform.LookAt(cam.transform);
             }
         }
 
@@ -139,6 +147,7 @@ public class ObjectPlacer : MonoBehaviour {
         {
             Destroy(ghost);
             ghost = null;
+            objectCostCanvas.SetActive(false);
         }
     }
 
@@ -167,6 +176,7 @@ public class ObjectPlacer : MonoBehaviour {
         {
             ghost = Instantiate(prefabs[selection]);
         }
+        objectCostText.text = "$" + prefabCosts[selection];
         ghost.SetActive(false);
     }
 
