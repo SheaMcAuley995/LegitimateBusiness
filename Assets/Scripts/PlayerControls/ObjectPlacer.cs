@@ -74,7 +74,7 @@ public class ObjectPlacer : MonoBehaviour {
             BoxCollider bx = ghost.GetComponent<BoxCollider>();
             ghost.transform.position = hit.point;
             ghost.transform.position = new Vector3(Mathf.Round(hit.point.x / gridSquareSize),
-                                                   hit.point.y + bx.size.y / 2.0f,
+                                                   hit.point.y + ((bx.size.y / 2.0f) * ghost.transform.localScale.y),
                                                    Mathf.Round(hit.point.z / gridSquareSize));
             if(!Physics.CheckBox(ghost.transform.position, bx.size / (2.0f + float.MinValue), ghost.transform.rotation, placedObjectMask))
             {
