@@ -12,12 +12,16 @@ public class ObjectPlacer : MonoBehaviour {
     public LayerMask floorMask;
     public LayerMask placedObjectMask;
     public float costCanvasHeightBoost;
+    public float minPlaceSoundPitch;
+    public float maxPlaceSoundPitch;
 
     [Header("Links")]
     public Camera cam;
     public RoundManager roundManager;
     public GameObject objectCostCanvas;
     public Text objectCostText;
+    public AudioSource ads;
+    public AudioClip placementSond;
 
     private int selection = 0;
     private int fragileSelection;
@@ -134,6 +138,8 @@ public class ObjectPlacer : MonoBehaviour {
                 newobj.transform.position = ghost.transform.position;
                 newobj.transform.rotation = ghost.transform.rotation;
                 MoneyManager.Instance.SubtractMoney(prefabCosts[selection]);
+                ads.pitch = Random.Range(minPlaceSoundPitch, maxPlaceSoundPitch);
+                ads.PlayOneShot(placementSond);
                 if(selection == 0)
                 {
                     ReplaceGhost();
