@@ -1984,6 +1984,7 @@ MonoBehaviour:
   - {fileID: 1349913792545130, guid: c43c4d243df5b0649985c981f9957fe8, type: 2}
   - {fileID: 1385730610714072, guid: 7c410ea4ec35c204aa6845727701b571, type: 2}
   - {fileID: 1415470188621692, guid: abb751922df855c47a736cc614f4e4a0, type: 2}
+  - {fileID: 1635926214774370, guid: 03643b6a107b5fa46a6dd0d2fb73ca03, type: 2}
   prefabCosts:
   - 30
   floorMask:
