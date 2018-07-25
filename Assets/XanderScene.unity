@@ -788,6 +788,8 @@ MonoBehaviour:
 
     Place fragile objects with LMB.
 
+    Hold RMB to rotate camera.
+
     There is an expensive pizza placed in the corner you''re offering for free.
 
     If visitors break things trying to get the pizza, they have to pay for them.
