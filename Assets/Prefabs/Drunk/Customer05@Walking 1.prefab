@@ -2057,6 +2057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 5
+  yOffset: -0.4
   DrunkBallRB: {fileID: 0}
   BallPos: {fileID: 0}
 --- !u!137 &137622861255027360
