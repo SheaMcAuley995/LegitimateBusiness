@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 92dd0efd3d53c1147be414b3ab87f7f7
-timeCreated: 1532470311
+guid: 4826ba2a53f56f64f82a5522aaa0a6e9
+timeCreated: 1532537027
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert2
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface2
+    4300000: Glass_Window
     9500000: //RootNode
   externalObjects: {}
   materials:
