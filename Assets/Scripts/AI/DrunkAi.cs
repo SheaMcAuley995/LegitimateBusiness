@@ -27,6 +27,8 @@ public class DrunkAi : MonoBehaviour {
 
     private void Update()
     {
+
+
         for (int i = 0; i < path.corners.Length - 1; i++)
         {
             Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red);
