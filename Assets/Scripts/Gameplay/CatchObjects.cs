@@ -8,6 +8,14 @@ public class CatchObjects : MonoBehaviour {
 
 
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("PlacableObjects"))
