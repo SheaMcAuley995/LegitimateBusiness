@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f10f913e870e1cf46a24823425aeb4b9
 timeCreated: 1532468252
+=======
+guid: 2d7febc82d8154a4aaf565dd6e417edf
+timeCreated: 1532454854
+>>>>>>> ernest
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
