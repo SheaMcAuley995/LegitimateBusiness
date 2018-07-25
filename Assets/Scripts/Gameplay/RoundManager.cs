@@ -14,6 +14,11 @@ public class RoundManager : MonoBehaviour {
     public float placementTime;
     public float costOfPizza;
 
+    public AudioSource ads;
+    public AudioClip pizzaBuySound;
+    public AudioClip gameOverSound;
+    public AudioSource musicPlayer;
+
     public float placementTimer { get; private set; }
 
 
@@ -53,8 +58,11 @@ public class RoundManager : MonoBehaviour {
     private void FinishRound()
     {
         MoneyManager.Instance.SubtractMoney(costOfPizza);
-        if(MoneyManager.Instance.Money <= 0 && onGameEnd != null)
+        ads.PlayOneShot(pizzaBuySound);
+        if (MoneyManager.Instance.Money < 0 && onGameEnd != null)
         {
+            musicPlayer.Stop();
+            ads.PlayOneShot(gameOverSound);
             onGameEnd();
         }
         else if(MoneyManager.Instance.Money > 0 && onRoundWin != null)
