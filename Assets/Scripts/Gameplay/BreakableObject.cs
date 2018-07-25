@@ -6,6 +6,7 @@ public class BreakableObject : MonoBehaviour {
 
     public float moneyWhenBroken;
     public GameObject brokenPieces;
+    public AudioSource ads;
 
 
 
@@ -32,6 +33,9 @@ public class BreakableObject : MonoBehaviour {
             BreakableManager.Instance.AddBrokenPieces(brokenPieces);
 
             MoneyManager.Instance.AddMoney(moneyWhenBroken);
+
+            AudioManager.Instance.ads.pitch = ads.pitch;
+            AudioManager.Instance.ads.PlayOneShot(ads.clip);
 
             Destroy(gameObject);
         }
