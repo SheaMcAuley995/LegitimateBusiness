@@ -9,6 +9,7 @@ public class DrunkSpawner : MonoBehaviour {
     public Transform spawnPoint;
     public GameObject pizza;
     public RoundManager roundManager;
+    public AudioSource play;
 
     public float waveSize = 0f;
     public float countDown = 2f;
@@ -53,6 +54,8 @@ public class DrunkSpawner : MonoBehaviour {
     {
         for(int i = 0; i<waveSize;i++)
         {
+            play.Play();
+
             GameObject drunkmesh = Instantiate(drunkMesh, spawnPoint.position, spawnPoint.rotation);
             GameObject drunk = Instantiate(drunkGuy, spawnPoint.position, spawnPoint.rotation);
             drunk.GetComponent<DrunkAi>().target = pizza;
